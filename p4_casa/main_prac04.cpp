@@ -1,7 +1,9 @@
 /*---------------------------------------------------------*/
-/* ----------------   Pr�ctica 4 --------------------------*/
+/* ----------------   Práctica 4 --------------------------*/
 /*-----------------    2019-2   ---------------------------*/
-/*------------- Computaci�n gr�fica e interacci�n humano computadora  ---------------*/
+/*------------- Computación gráfica e interacción humano computadora
+BRENDA ORTIZ MARTÍNEZ 
+GRUPO 4 LAB COMPUTACIÓN GRÁFICA ---------------*/
 #include <glew.h>
 #include <glfw3.h>
 
@@ -283,7 +285,7 @@ int main()
 		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		//Mi funci�n de dibujo
+		//Mi función de dibujo
 		display();
 
 		// glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
