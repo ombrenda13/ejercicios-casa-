@@ -3,7 +3,17 @@
 /*-----------------    2019-2   ---------------------------*/
 /*------------- Computación gráfica e interacción humano computadora
 BRENDA ORTIZ MARTÍNEZ 
-GRUPO 4 LAB COMPUTACIÓN GRÁFICA ---------------*/
+GRUPO 4 LAB COMPUTACIÓN GRÁFICA 
+INSTRUCCIONES 
+FLECHAS DEL TECLADO: 
+	<rotar izquierda
+	> rotar derecha 
+	^ rotar hacia arriba
+	v rotar hacia abajo 
+	TECLA A: movimiento izquierda
+	TECLA D: movimiento derecha
+	TECLA W: acercar
+	TECLA S: alejar---------------*/
 #include <glew.h>
 #include <glfw3.h>
 
