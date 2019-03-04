@@ -1,7 +1,24 @@
 /*---------------------------------------------------------*/
-/* ----------------   Pr�ctica 4 --------------------------*/
+/* ----------------   Práctica 4 --------------------------*/
 /*-----------------    2019-2   ---------------------------*/
-/*------------- Computaci�n gr�fica e interacci�n humano computadora  ---------------*/
+/*------------- Computación gráfica e interacción humano computadora
+
+BRENDA ORTIZ MARTÍNEZ 
+GRUPO 4 LAB COMPUTACIÓN GRÁFICA 
+INSTRUCCIONES 
+FLECHAS DEL TECLADO: 
+	<rotar izquierda
+	> rotar derecha 
+	^ rotar hacia arriba
+	v rotar hacia abajo 
+	TECLA A: movimiento izquierda
+	TECLA D: movimiento derecha
+	TECLA W: acercar
+	TECLA S: alejar
+
+---------------*/
+
+
 #include <glew.h>
 #include <glfw3.h>
 
@@ -139,86 +156,133 @@ void display(void)
 
 	glBindVertexArray(VAO);
 
-	projectionShader.setVec3("aColor", glm::vec3(1.0f, 0.0f, 0.0f));
-	model = glm::scale(model, glm::vec3(1.5, 2.5, 1));// para hacer escalas al objeto x,y,z
-	projectionShader.setMat4("model", model);
-	glDrawArrays(GL_QUADS, 0, 24); //cabeza
-
-	model = glm::translate(model, glm::vec3(0, -.5, 0));
-	projectionShader.setVec3("aColor", glm::vec3(1.0f, 0.0f, 1.0f));
-	model = glm::scale(model, glm::vec3(0.5, 0.5, 1));// para hacer escalas al objeto x,y,z
-	projectionShader.setMat4("model", model);
-	glDrawArrays(GL_QUADS, 0, 24); //cuello
-
-	model = glm::translate(model, glm::vec3(0, -2, 0));
-	projectionShader.setVec3("aColor", glm::vec3(0.0f, 0.0f, 1.0f));
-	model = glm::scale(model, glm::vec3(4, 3, 1));// para hacer escalas al objeto x,y,z
-	projectionShader.setMat4("model", model);
-	glDrawArrays(GL_QUADS, 0, 24); //torso
-
-	model = glm::translate(model, glm::vec3(-.7, .4, 0));
-	model = glm::scale(model, glm::vec3(.5, .2, 1));// para hacer escalas al objeto x,y,z
-	projectionShader.setVec3("aColor", glm::vec3(0.0f, 1.0f, 0.0f));
-	projectionShader.setMat4("model", model);
-	glDrawArrays(GL_QUADS, 0, 24); //hombro izquierdo
-
-	model = glm::translate(model, glm::vec3(-0.25, -2, 0));
-	model = glm::scale(model, glm::vec3(0.5, 3, 1));// para hacer escalas al objeto x,y,z
-	projectionShader.setVec3("aColor", glm::vec3(1.0f, 0.0f, 2.0f));
-	projectionShader.setMat4("model", model);
-	glDrawArrays(GL_QUADS, 0, 24); //brazo izquierdo
-
-	model = glm::translate(model, glm::vec3(6.3, .67, 0));
-	projectionShader.setVec3("aColor", glm::vec3(0.0f, 1.0f, 0.0f));
-	model = glm::scale(model, glm::vec3(2, .33, 1));// para hacer escalas al objeto x,y,z
-	projectionShader.setMat4("model", model);
-
-	glDrawArrays(GL_QUADS, 0, 24); //hombro derecho
-
-	model = glm::translate(model, glm::vec3(.25, -2, 0));
-	projectionShader.setVec3("aColor", glm::vec3(1.0f, 0.0f, 2.0f));
-	model = glm::scale(model, glm::vec3(.5, 3, 1));// para hacer escalas al objeto x,y,z
-	projectionShader.setMat4("model", model);
-	glDrawArrays(GL_QUADS, 0, 24); //brazo derecho
-
-	model = glm::translate(model, glm::vec3(-3.5, -1, 0));
-	projectionShader.setVec3("aColor", glm::vec3(2.5f, 2.5f, 0.0f));
-	model = glm::scale(model, glm::vec3(4, .66, 1));// para hacer escalas al objeto x,y,z
-	projectionShader.setMat4("model", model);
-	glDrawArrays(GL_QUADS, 0, 24); //cinturon
-
-	model = glm::translate(model, glm::vec3(.35, -2, 0));
+	model = glm::translate(model, glm::vec3(0, 0, 0));
+	model = glm::scale(model,glm::vec3(1,1,1));
 	projectionShader.setVec3("aColor", glm::vec3(1.0f, 1.0f, 1.0f));
-	model = glm::scale(model, glm::vec3(.3, 3, 1));// para hacer escalas al objeto x,y,z
 	projectionShader.setMat4("model", model);
-	glDrawArrays(GL_QUADS, 0, 24); //pierna derecha 
+	glDrawArrays(GL_QUADS,0,24);//cabeza
 
-	model = glm::translate(model, glm::vec3(-2.3, 0, 0));
+	model = glm::translate(model, glm::vec3(0, .55, 0));
+	model = glm::scale(model, glm::vec3(.3, .2, 1));
 	projectionShader.setVec3("aColor", glm::vec3(1.0f, 1.0f, 1.0f));
-	model = glm::scale(model, glm::vec3(1, 1, 1));// para hacer escalas al objeto x,y,z
 	projectionShader.setMat4("model", model);
-	glDrawArrays(GL_QUADS, 0, 24); //pierna izquierda
+	glDrawArrays(GL_QUADS, 0, 24);//plumas cabeza
 
-model = glm::translate(model, glm::vec3(-.85, -.7, 0));
-	model = glm::scale(model, glm::vec3(2.7,0.4,1));// para hacer escalas al objeto x,
-	projectionShader.setVec3("aColor", glm::vec3(1.02f, 0.5f, 0.0f));
+	model = glm::translate(model, glm::vec3(-0.25,.5, 0));
+	model = glm::scale(model, glm::vec3(1.5,.5, 1));
+	projectionShader.setVec3("aColor", glm::vec3(1.0f, 1.0f, 1.0f));
 	projectionShader.setMat4("model", model);
-	glDrawArrays(GL_QUADS, 0, 24); //pie izq
+	glDrawArrays(GL_QUADS, 0, 24);//plumas cabeza
 
-	model = glm::translate(model, glm::vec3(1.48, 0, 0));
-	model = glm::scale(model, glm::vec3(1, 1, 1));// para hacer escalas al objeto x,
-	projectionShader.setVec3("aColor", glm::vec3(1.02f, 0.5f, 0.0f));
+	model = glm::translate(model, glm::vec3(0.2,-8, .4));
+	model = glm::scale(model, glm::vec3(1.5,1, 1));
+	projectionShader.setVec3("aColor", glm::vec3(2.8f, 1.5f, 0.5f));
 	projectionShader.setMat4("model", model);
-	glDrawArrays(GL_QUADS, 0, 24); //pierna izquierda
+	glDrawArrays(GL_QUADS, 0, 24);//pico
+
+	model = glm::translate(model, glm::vec3(0,-0.5,-0.1));
+	model = glm::scale(model, glm::vec3(1, 1, 1));
+	projectionShader.setVec3("aColor", glm::vec3(2.5f, 1.5f, 0.5f));
+	projectionShader.setMat4("model", model);
+	glDrawArrays(GL_QUADS, 0, 24);//pico
+
+	model = glm::translate(model, glm::vec3(-0.25, 2, -0.25));
+	model = glm::scale(model, glm::vec3(-0.2,1.5, 1));
+	projectionShader.setVec3("aColor", glm::vec3(0.0f, 0.0f, 0.0f));
+	projectionShader.setMat4("model", model);
+	glDrawArrays(GL_QUADS, 0, 24);//ojo izq
+
+	model = glm::translate(model, glm::vec3(-2.5,0.0,0));
+	model = glm::scale(model, glm::vec3(-1, 1, 1));
+	projectionShader.setVec3("aColor", glm::vec3(0.0f, 0.0f, 0.0f));
+	projectionShader.setMat4("model", model);
+	glDrawArrays(GL_QUADS, 0, 24);//ojo izq
+
+	model = glm::translate(model, glm::vec3(-1.3,-3.5, 0));
+	model = glm::scale(model, glm::vec3(1.5,1.2, 0.2));
+	projectionShader.setVec3("aColor", glm::vec3(1.0f, 1.0f, 1.0f));
+	projectionShader.setMat4("model", model);
+	glDrawArrays(GL_QUADS, 0, 24);//cuello
+
+	model = glm::translate(model, glm::vec3(0.0,-2.55, 0));
+	model = glm::scale(model, glm::vec3(4.5, 4, 2.5));
+	projectionShader.setVec3("aColor", glm::vec3(0.2f, 0.6f, 1.8f));
+	projectionShader.setMat4("model", model);
+	glDrawArrays(GL_QUADS, 0, 24);//torso
+
+	model = glm::translate(model, glm::vec3(.55 ,0.25, 0));
+	model = glm::scale(model, glm::vec3(.2, .2, 0.3));
+	projectionShader.setVec3("aColor", glm::vec3(0.2f, 0.6f, 1.8f));
+	projectionShader.setMat4("model", model);
+	glDrawArrays(GL_QUADS, 0, 24);//hombro derecho 
+
+	model = glm::translate(model, glm::vec3(-5.6, -0.15, 0));
+	model = glm::scale(model, glm::vec3(1, 1, 1));
+	projectionShader.setVec3("aColor", glm::vec3(0.2f, 0.6f, 1.8f));
+	projectionShader.setMat4("model", model);
+	glDrawArrays(GL_QUADS, 0, 24);//hombro izq 
 
 
-	//model = glm::translate(model, glm::vec3(3, 0, 0));
-	//model = glm::scale(model,glm::vec3(2,2,5));
-	//projectionShader.setVec3("aColor", glm::vec3(0.0f, 1.0f, 0.0f));
-	//projectionShader.setMat4("model", model);
+	model = glm::translate(model, glm::vec3(-0.05, -2.5, 0));
+	model = glm::scale(model, glm::vec3(1, 4, 1));
+	projectionShader.setVec3("aColor", glm::vec3(0.2f, 0.7f, 1.2f));
+	projectionShader.setMat4("model", model);
+	glDrawArrays(GL_QUADS, 0, 24);//brazo izq 
 
-	//glDrawArrays(GL_QUADS,0,24);
+	model = glm::translate(model, glm::vec3(0, -0.6, 0));
+	model = glm::scale(model, glm::vec3(1, .25, 1));
+	projectionShader.setVec3("aColor", glm::vec3(1.0f, 1.0f, 1.0f));
+	projectionShader.setMat4("model", model);
+	glDrawArrays(GL_QUADS, 0, 24);//mano izq 
+	
+	model = glm::translate(model, glm::vec3(5.7, 0.0, 0));
+	model = glm::scale(model, glm::vec3(1, 1, 1));
+	projectionShader.setVec3("aColor", glm::vec3(1.0f, 1.0f, 1.0f));
+	projectionShader.setMat4("model", model);
+	glDrawArrays(GL_QUADS, 0, 24);//mano der 
 
+	model = glm::translate(model, glm::vec3(0, 2.5, 0));
+	model = glm::scale(model, glm::vec3(1,4.1, 1));
+	projectionShader.setVec3("aColor", glm::vec3(0.2f, 0.7f, 1.2f));
+	projectionShader.setMat4("model", model);
+	glDrawArrays(GL_QUADS, 0, 24);//brazo der 
+
+	model = glm::translate(model, glm::vec3(-2.8, -0.7, -1.3));
+	model = glm::scale(model, glm::vec3(5, .8, 6));
+	projectionShader.setVec3("aColor", glm::vec3(1.0f, 1.0f, 1.0f));
+	projectionShader.setMat4("model", model);
+	glDrawArrays(GL_QUADS, 0, 24);//panza  
+
+	model = glm::translate(model, glm::vec3(0.0, 0.6, -0.5));
+	model = glm::scale(model, glm::vec3(.3,.5,0.25));
+	projectionShader.setVec3("aColor", glm::vec3(1.0f, 1.0f, 1.0f));
+	projectionShader.setMat4("model", model);
+	glDrawArrays(GL_QUADS, 0, 24);//cola  
+
+	model = glm::translate(model, glm::vec3(-0.6, -3, 2.5));
+	model = glm::scale(model, glm::vec3(.4, 3.5, .5));
+	projectionShader.setVec3("aColor", glm::vec3(2.5f, 1.5f, 0.5f));
+	projectionShader.setMat4("model", model);
+	glDrawArrays(GL_QUADS, 0, 24);//pierna izquierda
+
+	model = glm::translate(model, glm::vec3(-0.3, -0.5, 1));
+	model = glm::scale(model, glm::vec3(3, .1, 4.5));
+	projectionShader.setVec3("aColor", glm::vec3(2.5f, 1.5f, 0.5f));
+	projectionShader.setMat4("model", model);
+	glDrawArrays(GL_QUADS, 0, 24);//pie izquierdo
+
+	model = glm::translate(model, glm::vec3(1.2, 0.0, 0.0));
+	model = glm::scale(model, glm::vec3(1, 1, 1));
+	projectionShader.setVec3("aColor", glm::vec3(2.5f, 1.5f, 0.5f));
+	projectionShader.setMat4("model", model);
+	glDrawArrays(GL_QUADS, 0, 24);//pie derecho
+
+
+	model = glm::translate(model, glm::vec3(0.0, 4, 0));
+	model = glm::scale(model, glm::vec3(0.36, 8, .250));
+	projectionShader.setVec3("aColor", glm::vec3(2.5f, 1.5f, 0.5f));
+	projectionShader.setMat4("model", model);
+	glDrawArrays(GL_QUADS, 0, 24);//pierna derecha
 
 	//model = glm::translate(model, glm::vec3(-2, 0, 0)); //se usa 2 para que la transformacion de 6 
 
@@ -280,10 +344,10 @@ int main()
 
 		// render
 		// Backgound color
-		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+		glClearColor(0.65f, 0.0f, 0.9f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		//Mi funci�n de dibujo
+		//Mi función de dibujo
 		display();
 
 		// glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
